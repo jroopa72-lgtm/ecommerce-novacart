@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+
+  <link rel="stylesheet" href="../css/login.css" >
+</head>
+
+<body>
+
+
+  <header class="navbar">
+    <div class="logo">NovaCart</div>
+
+    <nav class="nav-links">
+      <a href="index.html">Shop</a>
+      <a href="about.html">About</a>
+    </nav>
+
+    <div class="nav-buttons">
+      <a href="login.html" class="login-btn"> Login </a>
+
+      <a href="register.html" class="register-btn"> Register </a>
+    </div>
+  </header>
+
+  <section class="l-container">
+
+
+    <div class="left-side">
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop" alt="" />
+
+      <div class="overlay"></div>
+
+      <div class="left-content">
+        <h4>WELCOME BACK</h4>
+
+        <h1>Access your cart and continue shopping faster.</h1>
+
+        <p>
+          Your demo account is stored locally in this browser for portfolio
+          and learning use.
+        </p>
+      </div>
+    </div>
+
+
+
+    <div class="right-side">
+      <div class="form-box">
+        <h2>Login</h2>
+
+        <p class="subtitle">Enter your registered email and password.</p>
+
+        <form id="loginForm">
+          <label>Email address</label>
+          <input type="email" required />
+
+          <label>Password</label>
+          <input type="password" required />
+
+          <div class="remember">
+            <div>
+              <input type="checkbox" checked />
+              <span>Remember me</span>
+            </div>
+
+            <a href="register.html"> Create account </a>
+          </div>
+
+          <button type="submit" class="submit-btn">Login</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script src="../scripts/login.js"></script>
+</body>
+
+</html>
