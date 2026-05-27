@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NovaCart</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <div class="nav-left">
+
+            <div class="logo">
+                NovaCart
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html">Shop</a>
+                <a href="about.html">About</a>
+            </div>
+
+        </div>
+        <div class="nav-right">
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input type="text" id="searchInput" placeholder="Search products...">
+
+            </div>
+            <select id="categorySelect">
+                <option>All categories</option>
+                <option>Beauty</option>
+                <option>Electronics</option>
+                <option>Fashion</option>
+                <option>Home</option>
+            </select>
+
+            <button class="btn" onclick="login()">
+                Login
+            </button>
+
+            <button class="btn register" onclick="register()">
+                Register
+            </button>
+
+            <!-- CART -->
+
+            <div class="cart" onclick="openCart()">
+
+                <i class="fa-solid fa-bag-shopping"></i>
+
+                <div class="cart-count">
+                    0
+                </div>
+
+            </div>
+
+        </div>
+        </div>
+
+    </nav>
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h4>
+                NEW COLLECTION
+            </h4>
+
+            <h1>
+                Shop reliable products for
+                everyday work and life.
+            </h1>
+
+            <p>
+                Curted electronics, fashion,home goods accessories with a fast local cart,
+                experience.
+            </p>
+
+        </div>
+
+        <!-- STATS -->
+
+        <div class="stats">
+
+            <div class="stat-box">
+                <h2>50</h2>
+                <p>Products</p>
+            </div>
+
+            <div class="stat-box">
+                <h2>5</h2>
+                <p>Pages</p>
+            </div>
+
+            <div class="stat-box">
+                <h2>24h</h2>
+                <p>Dispatch</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PRODUCTS -->
+
+    <section class="products-section">
+
+        <div class="top-bar">
+
+            <div class="top-left">
+                <h2>Products</h2>
+                <p>Showing products</p>
+            </div>
+
+            <select class="sort">
+                <option>Featured</option>
+                <option>Price Low to High</option>
+                <option>Price High to Low</option>
+            </select>
+
+        </div>
+
+        <div id="products" class="product-grid">
+        </div>
+
+        <!-- PAGINATION -->
+
+        <div class="pagination">
+
+            <button id="prev"class="page-btn">
+                Prev
+            </button>
+
+            <button  class="page-btn">
+                1
+            </button>
+
+            <button class="page-btn">
+                2
+            </button>
+
+            <button class="page-btn">
+                3
+            </button>
+
+            <button class="page-btn">
+                4
+            </button>
+
+            <button class="page-btn">
+                5
+            </button>
+
+            <button id="next" class="page-btn">
+                Next
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- CART SIDEBAR -->
+
+    <div id="cartSidebar" class="cart-sidebar">
+
+        <div class="cart-header">
+
+            <h2>
+                Shopping Cart
+            </h2>
+
+            <button id="closeCart">
+                ✖
+            </button>
+
+        </div>
+
+        <div id="cartItems">
+        </div>
+
+        <div class="cart-footer">
+
+            <h3>
+                Subtotal: $<span id="subtotal">0</span>
+            </h3>
+
+            <h3>
+                Estimated Shipping: $<span id="shipping">8.50</span>
+            </h3>
+
+            <h2>
+                Total: $<span id="total">0</span>
+            </h2>
+
+            <button id="clearCart">
+                Clear Cart
+            </button>
+
+            <button id="checkoutBtn">
+                Checkout
+            </button>
+
+        </div>
+    </div>
+
+    </div>
+    <script src="../js/script.js"></script>
+    <div id="toast" class="toast"></div>
+</body>
+
+</html>
