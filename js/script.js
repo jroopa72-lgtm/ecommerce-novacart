@@ -12,7 +12,7 @@ let filteredProducts = [];
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 let currentPage = 1;
-const perPage = 10;
+let perPage = 10;
 
 
 // FETCH PRODUCTS
@@ -150,6 +150,7 @@ categorySelect?.addEventListener("change", function () {
     if (selected === "All categories") {
 
         filteredProducts = [...products];
+        perPage = 10;
 
     } else {
 
@@ -157,10 +158,11 @@ categorySelect?.addEventListener("change", function () {
             (product.category || "")
             .toLowerCase() === selected.toLowerCase()
         );
+
+        perPage = 8;
     }
 
     currentPage = 1;
-
     displayProducts();
 });
 
@@ -416,6 +418,43 @@ pageBtns.forEach(btn => {
 
 prevBtn=document.getElementById("prev");
 nextBtn=document.getElementById("next");
+
+pageBtns.forEach(btn => {
+
+    btn.addEventListener("click", function () {
+
+        let totalPages =
+            Math.ceil(filteredProducts.length / perPage);
+
+        // NEXT BUTTON
+        if (
+            (this.id === "next" || this.innerText.trim() === "Next") &&
+            currentPage < totalPages
+        ) {
+
+            currentPage++;
+
+        }
+
+        // PREVIOUS BUTTON
+        else if (
+            (this.id === "prev" || this.innerText.trim() === "Previous") &&
+            currentPage > 1
+        ) {
+
+            currentPage--;
+
+        }
+
+        // NUMBER BUTTON
+        else if (!isNaN(this.innerText)) {
+
+            currentPage = parseInt(this.innerText);
+        }
+
+        displayProducts();
+    });
+});
 // UPDATE PAGINATION
 function updatePagination() {
 
@@ -428,14 +467,27 @@ function updatePagination() {
     );
 
     // ACTIVE PAGE
-    pageBtns.forEach(btn => {
+    
+pageBtns.forEach(btn => {
 
-        if (parseInt(btn.innerText) === currentPage) {
+    let pageNum = parseInt(btn.innerText);
 
-            btn.classList.add("active");
+    if (!isNaN(pageNum)) {
+
+        if (pageNum <= totalPages) {
+
+            btn.style.display = "inline-block";
+
+            if (pageNum === currentPage) {
+                btn.classList.add("active");
+            }
+
+        } else {
+
+            btn.style.display = "none";
         }
-    });
-
+    }
+});
     // PAGE INFO
     if (pageInfo) {
 
